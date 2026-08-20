@@ -1,0 +1,21 @@
+id = "herdr-muse"
+name = "Herdr Muse"
+version = "0.1.1"
+min_herdr_version = "0.8.0"
+description = "Muse integration for Herdr — reports Muse Code sessions to Herdr so it appears as a managed agent with idle/working states. Tier 1 local plugin (no herdr rebuild)."
+platforms = ["linux", "macos"]
+
+[[startup]]
+command = ["bash", "startup.sh"]
+
+[[actions]]
+id = "report-muse"
+title = "Herdr Muse: report current Muse panes"
+contexts = ["global"]
+command = ["bash", "report.sh"]
+
+[[actions]]
+id = "clear-muse"
+title = "Herdr Muse: clear Muse agent labels"
+contexts = ["global"]
+command = ["bash", "clear.sh"]
